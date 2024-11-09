@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cf4eff90-bbee-4900-8ad8-1db49ade30b3" name="Changes" comment="" />
+    <list default="true" id="cf4eff90-bbee-4900-8ad8-1db49ade30b3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Microservices/discovery-service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Microservices/discovery-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Microservices/discovery-service/src/main/java/be/pxl/services/DiscoveryServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Microservices/department-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Microservices/department-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Microservices/department-service/src/test/java/be/pxl/services/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Microservices/discovery-service/src/test/java/be/pxl/services/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Microservices/employee-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Microservices/employee-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Microservices/organization-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Microservices/organization-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Microservices/organization-service/src/test/java/be/pxl/services/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Microservices/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Microservices/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-web/customer-app/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend-web/customer-app/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-web/customer-app/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend-web/customer-app/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-web/customer-app/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend-web/customer-app/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend-web/customer-app/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend-web/customer-app/src/styles.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -9,6 +23,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2mQjAAdYCSZUgNQhXxB6rFjzP6r" />
   <component name="ProjectViewState">
@@ -20,6 +37,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/simer/Documents/Fullstack/3tiwfullstack-labs-SimeranDonnePXL/backend-java",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -32,6 +50,7 @@
       <option name="presentableId" value="Default" />
       <updated>1727015549071</updated>
       <workItem from="1727015550110" duration="195000" />
+      <workItem from="1729587119504" duration="72000" />
     </task>
     <servers />
   </component>

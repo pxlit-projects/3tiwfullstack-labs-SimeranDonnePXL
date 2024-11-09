@@ -1,10 +1,14 @@
 package be.pxl.services.Services;
 
+import be.pxl.services.Client.NotificationClient;
 import be.pxl.services.Controller.Request.EmployeeRequest;
 import be.pxl.services.Controller.Response.EmployeeDTO;
 import be.pxl.services.Domain.Employee;
+import be.pxl.services.Model.NotificationRequest;
 import be.pxl.services.Repository.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,6 +19,9 @@ import java.util.Optional;
 public class EmployeeService implements IEmployeeService{
 
     private final EmployeeRepository employeeRepository;
+    private final NotificationClient notificationClient;
+    private RabbitTemplate rabbitTemplate;
+
     @Override
     public List<EmployeeDTO> getAllEmployees() {
         List<Employee> employees = employeeRepository.findAll();
@@ -32,6 +39,11 @@ public class EmployeeService implements IEmployeeService{
                 .build();
 
         employeeRepository.save(employee);
+        notificationClient.notificationSendMessage(NotificationRequest.builder()
+                .message("Employee created")
+                .to("simeran")
+                .build());
+        rabbitTemplate.convertAndSend("myQueue", "Hello, world!");
     }
 
     @Override

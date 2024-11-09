@@ -1,0 +1,10 @@
+services:
+  rabbitmq:
+    image: rabbitmq:3-management  # Uses the RabbitMQ image with the management plugin
+    container_name: rabbitmq-broker
+    ports:
+      - "5672:5672"      # RabbitMQ default port
+      - "15672:15672"    # Management dashboard port
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
