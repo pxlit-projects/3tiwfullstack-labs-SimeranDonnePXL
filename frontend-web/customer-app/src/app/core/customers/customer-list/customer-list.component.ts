@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CustomerItemComponent } from '../customer-item/customer-item.component';
 import { FilterComponent } from '../filter/filter.component';
 import { Customer } from '../../../shared/models/customer.model';
+import { Filter } from '../../../shared/models/filter.model';
+import { CustomerService } from '../../../shared/services/customer.service';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-customer-list',
@@ -10,16 +13,29 @@ import { Customer } from '../../../shared/models/customer.model';
   templateUrl: './customer-list.component.html',
   styleUrl: './customer-list.component.css'
 })
-export class CustomerListComponent {
-  customers!: Customer[];
+export class CustomerListComponent implements OnInit {
+  private filteredDataSubject = new BehaviorSubject<Customer[]>([]);
+  filteredData$: Observable<Customer[]> = this.filteredDataSubject.asObservable();
+  
+  customerService: CustomerService = inject(CustomerService);
 
   ngOnInit(): void {
-    this.customers = [
-      new Customer('Ichigo Kurosaki', 'ichigo@pxl.be', 'Pelt', 'mystreet', 'Belgium', 21),
-      new Customer('Fat Dog', 'fatDog@pxl.be', 'New York', '5th Avenue', 'USA', 6, "dogo.png"),
-      new Customer('Killer Bean', 'bean@pxl.be', 'Los Angeles', 'Sunset Boulevard', 'USA', 6, "bean.png"),
-    ];
+    this.fetchData();
+  }
 
-    this.customers[1].isLoyal = true;
+  fetchData(): void {
+    this.customerService.getCustomers().subscribe({
+      next: (customers: Customer[]) => {
+        this.filteredDataSubject.next(customers);
+      }
+    });
+  }
+
+  handleFilter(filter: Filter): void {
+    this.customerService.filterCustomers(filter).subscribe({
+      next: (customers: Customer[]) => {
+        this.filteredDataSubject.next(customers);
+      }
+    });
   }
 }

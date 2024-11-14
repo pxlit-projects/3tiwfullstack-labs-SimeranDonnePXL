@@ -1,8 +1,9 @@
-<app-filter></app-filter>
+<app-filter (filterChanged)="handleFilter($event)"></app-filter>
+
 <div class="md:container md:mx-auto container mx-auto mt-10">
   <div class="grid grid-cols-3 gap-6">
-    @for(item of customers; track item.name){
-        <app-customer-item [customer]="item"></app-customer-item>
-    }
+    <ng-container *ngFor="let item of (filteredData$ | async); trackBy: trackByName">
+      <app-customer-item [customer]="item"></app-customer-item>
+    </ng-container>
   </div>
 </div>
